@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7 Star Indian Cuisine | Best Indian Restaurant in Bloomington, IN</title>
+  <meta name="description" content="Experience the finest authentic Indian cuisine at 7 Star Indian Cuisine in Bloomington, Indiana. Offering dine-in, takeout, and delivery. Famous for Chicken Tikka Masala and Tandoori specialties." />
+  <meta name="keywords" content="Indian Cuisine, Bloomington IN restaurant, Indian food Bloomington, 7 Star Indian Cuisine, best Indian restaurant near me, Chicken Tikka Masala, Tandoori" />
+  <meta name="geo.region" content="US-IN" />
+  <meta name="geo.placename" content="Bloomington" />
+  <meta name="geo.position" content="39.1622;-86.5348" />
+  <meta name="ICBM" content="39.1622, -86.5348" />
+
+  <!-- Open Graph tags for social sharing -->
+  <meta property="og:title" content="7 Star Indian Cuisine | Bloomington, IN" />
+  <meta property="og:description" content="Authentic Indian Cuisine in Bloomington. Order online or visit us for our famous Chicken Tikka Masala and Garlic Naan." />
+  <meta property="og:type" content="restaurant" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind Configuration to Match Your Colors -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            tan: '#C7B08A',
+            cream: '#E8DCC0',
+            charcoal: '#1B1B1B',
+            walnut: '#5A3A28',
+            gold: '#D69E36',
+            brick: '#8C3A29',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Marquee animation */
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      animation: marquee 25s linear infinite;
+    }
+    /* Hide scrollbar */
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    /* Single Page Routing Styles */
+    .page {
+      display: none;
+    }
+    .page.active {
+      display: block;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-cream text-charcoal font-sans relative selection:bg-gold selection:text-charcoal flex flex-col overflow-x-hidden">
+
+  <!-- Background Graphic Elements -->
+  <div class="fixed top-0 right-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] lg:w-[800px] lg:h-[800px] bg-tan rounded-full mix-blend-multiply opacity-20 -mr-20 -mt-20 md:-mr-40 md:-mt-40 pointer-events-none z-0"></div>
+  <div class="fixed bottom-0 left-0 w-[200px] h-[200px] md:w-[400px] md:h-[400px] lg:w-[600px] lg:h-[600px] bg-brick rounded-full mix-blend-multiply opacity-10 -ml-10 -mb-10 md:-ml-20 md:-mb-20 pointer-events-none z-0"></div>
+
+  <!-- Top Navigation Bar -->
+  <nav class="flex justify-between items-center px-6 md:px-12 py-6 md:py-8 relative z-50 max-w-7xl mx-auto w-full">
+    <!-- Logo -->
+    <a href="#" onclick="navigateTo('home'); return false;" class="flex items-center gap-3 hover:scale-105 transition-transform z-50">
+      <svg viewBox="0 0 100 100" class="w-12 h-12 md:w-14 md:h-14" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="50" fill="#1B1B1B" />
+        <polygon points="50,10 62,35 88,35 67,52 75,78 50,62 25,78 33,52 12,35 38,35" fill="#FFFFFF" />
+        <text x="50" y="47" fontFamily="serif" fontSize="34" fontWeight="900" fill="#1B1B1B" textAnchor="middle" fontStyle="italic">7</text>
+        <text x="50" y="73" fontFamily="serif" fontSize="14" fontWeight="bold" fill="#FFFFFF" textAnchor="middle">Indian</text>
+        <text x="50" y="89" fontFamily="serif" fontSize="14" fontWeight="bold" fill="#FFFFFF" textAnchor="middle">Cuisine</text>
+      </svg>
+    </a>
+
+    <!-- Desktop Navigation Menu -->
+    <div class="hidden md:flex flex-wrap justify-center gap-6 lg:gap-10 font-bold uppercase tracking-widest text-charcoal">
+      <a href="#" onclick="navigateTo('home'); return false;" class="nav-link transition-opacity block py-2 md:py-0 text-lg md:text-sm active-link opacity-100 border-b-2 border-charcoal md:pb-1" data-target="home">Home</a>
+      <a href="#" onclick="navigateTo('menu'); return false;" class="nav-link transition-opacity block py-2 md:py-0 text-lg md:text-sm opacity-70 hover:opacity-100" data-target="menu">Menu</a>
+      <a href="#" onclick="navigateTo('about'); return false;" class="nav-link transition-opacity block py-2 md:py-0 text-lg md:text-sm opacity-70 hover:opacity-100" data-target="about">About Us</a>
+      <a href="#" onclick="navigateTo('gallery'); return false;" class="nav-link transition-opacity block py-2 md:py-0 text-lg md:text-sm opacity-70 hover:opacity-100" data-target="gallery">Gallery</a>
+      <a href="#" onclick="navigateTo('contact'); return false;" class="nav-link transition-opacity block py-2 md:py-0 text-lg md:text-sm opacity-70 hover:opacity-100" data-target="contact">Contact</a>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="hidden md:block">
+      <a href="tel:+13177784345" class="bg-charcoal text-cream px-6 py-2.5 rounded-full font-bold text-sm uppercase shadow-xl hover:scale-105 transition-transform inline-block">Order Now</a>
+    </div>
+
+    <!-- Mobile Menu Toggle Button -->
+    <button class="md:hidden text-charcoal z-50 p-2 focus:outline-none" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+      <i id="menu-icon" data-lucide="menu" class="w-7 h-7"></i>
+    </button>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-cream/95 backdrop-blur-xl border-b border-charcoal/10 shadow-2xl p-6 flex flex-col gap-4 font-bold uppercase tracking-widest text-charcoal md:hidden">
+      <a href="#" onclick="navigateTo('home'); return false;" class="transition-opacity block py-2 text-lg" data-target="home">Home</a>
+      <a href="#" onclick="navigateTo('menu'); return false;" class="transition-opacity block py-2 text-lg" data-target="menu">Menu</a>
+      <a href="#" onclick="navigateTo('about'); return false;" class="transition-opacity block py-2 text-lg" data-target="about">About Us</a>
+      <a href="#" onclick="navigateTo('gallery'); return false;" class="transition-opacity block py-2 text-lg" data-target="gallery">Gallery</a>
+      <a href="#" onclick="navigateTo('contact'); return false;" class="transition-opacity block py-2 text-lg" data-target="contact">Contact</a>
+      <div class="pt-4 mt-2 border-t border-charcoal/10">
+        <a href="tel:+13177784345" class="bg-charcoal text-cream px-6 py-3 rounded-full font-bold text-sm uppercase shadow-xl text-center block w-full">Order Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SPA PAGES CONTAINER -->
+  <div class="relative z-10 flex-grow w-full">
+
+    <!-- 1. HOME PAGE SECTION -->
+    <section id="page-home" class="page active transition-all duration-500 ease-in-out w-full overflow-x-hidden">
+      <main class="w-full">
+        <div class="relative w-full min-h-[85vh] flex items-center">
+          <!-- Hero Background -->
+          <div class="absolute inset-0 z-0">
+            <div class="hidden lg:block absolute inset-0 bg-gradient-to-r from-cream via-cream/90 to-transparent z-10 w-2/3"></div>
+            <div class="lg:hidden absolute inset-0 bg-gradient-to-b from-cream/95 via-cream/60 to-cream/95 z-10"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-cream to-transparent z-10 h-32 bottom-0 top-auto"></div>
+            <img src="assets/images/hero_biryani_1783609306192.jpg" alt="Indian Spices Background" class="w-full h-full object-cover object-center lg:object-right" />
+          </div>
+
+          <div class="relative z-20 flex flex-col lg:flex-row px-4 md:px-12 gap-12 max-w-7xl mx-auto items-center w-full">
+            <div class="flex-1 flex flex-col justify-center pt-20 md:pt-0 max-w-3xl">
+              <div class="inline-flex items-center gap-2 bg-charcoal/5 backdrop-blur-sm px-4 py-1.5 rounded-full mb-6 w-fit border border-charcoal/10">
+                <span class="text-gold text-lg tracking-widest">★★★★★</span>
+                <span class="font-bold text-sm text-charcoal">4.8 Rating (87 Reviews)</span>
+              </div>
+              <h1 class="text-6xl md:text-8xl lg:text-[120px] leading-[0.9] font-black uppercase tracking-tighter mb-6 text-charcoal">
+                Indian<br/>Cuisine<br/><span class="text-walnut">Perfected.</span>
+              </h1>
+              <p class="text-xl md:text-2xl max-w-md font-medium text-charcoal/80 leading-relaxed">
+                Experience the authentic spices of Bloomington's favorite destination for Tandoor, Korma, and Garlic Naan.
+              </p>
+              
+              <div class="mt-10 flex flex-wrap gap-4">
+                <a href="tel:+13177784345" class="bg-brick text-cream px-8 py-4 rounded-xl font-black uppercase text-lg flex items-center gap-3 hover:bg-walnut transition-colors shadow-xl">
+                  Place Order
+                  <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+                <a href="#" onclick="navigateTo('menu'); return false;" class="border-2 border-charcoal/30 hover:border-charcoal hover:bg-charcoal/5 text-charcoal px-8 py-4 rounded-xl font-black uppercase text-lg transition-all backdrop-blur-md">View Menu</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- About Teaser -->
+      <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 md:px-12">
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+          <div class="flex-1">
+            <div class="uppercase text-walnut font-black tracking-[0.2em] mb-4 text-sm">Our Story</div>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-charcoal mb-6 leading-[0.9]">
+              A Legacy of <br class="hidden md:block" /> Flavor.
+            </h2>
+            <p class="text-lg text-charcoal/80 font-medium leading-relaxed mb-6">
+              At 7 Star Indian Cuisine, we believe in preserving the authentic recipes passed down through generations. Our journey began with a simple passion: to bring the rich, diverse flavors of India to the heart of Bloomington.
+            </p>
+            <p class="text-lg text-charcoal/80 font-medium leading-relaxed mb-8">
+              Every dish is crafted with freshly ground spices and the finest ingredients, ensuring an unforgettable dining experience that feels like a warm welcome to our family table.
+            </p>
+            <a href="#" onclick="navigateTo('about'); return false;" class="inline-flex items-center gap-2 bg-charcoal text-cream px-8 py-4 rounded-xl font-black uppercase tracking-wider text-sm hover:bg-walnut transition-colors shadow-lg">
+              Read Our Full Story
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+          </div>
+          <div class="flex-1 w-full">
+            <div class="relative rounded-[40px] overflow-hidden shadow-2xl">
+              <img src="assets/images/restaurant_interior_1783604741593.jpg" alt="Restaurant Interior" class="w-full h-full object-cover min-h-[400px] lg:min-h-[500px]" />
+              <div class="absolute inset-0 border-[6px] border-cream/20 rounded-[40px] pointer-events-none mix-blend-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Carousel -->
+      <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 md:px-12">
+        <div class="flex justify-between items-end mb-10">
+          <div>
+            <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter text-charcoal">Featured Dishes</h2>
+            <p class="text-lg text-charcoal/70 font-medium mt-2">Discover our guests' top favorites</p>
+          </div>
+          <div class="hidden md:flex gap-3">
+            <button onclick="scrollCarousel('left')" class="w-12 h-12 rounded-full border-2 border-charcoal/20 flex items-center justify-center text-charcoal hover:bg-charcoal hover:text-cream transition-colors" aria-label="Scroll left">
+              <i data-lucide="arrow-left" class="w-6 h-6"></i>
+            </button>
+            <button onclick="scrollCarousel('right')" class="w-12 h-12 rounded-full border-2 border-charcoal/20 flex items-center justify-center text-charcoal hover:bg-charcoal hover:text-cream transition-colors" aria-label="Scroll right">
+              <i data-lucide="arrow-right" class="w-6 h-6"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="relative -mx-4 md:mx-0 px-4 md:px-0">
+          <div id="featured-carousel" class="flex gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-8" style="scrollbar-width: none; -ms-overflow-style: none;">
+            
+            <!-- Item 1 -->
+            <div onclick="navigateTo('menu')" class="min-w-[85vw] md:min-w-[350px] snap-start bg-white rounded-[32px] overflow-hidden shadow-lg border border-tan/30 flex flex-col group cursor-pointer hover:shadow-xl transition-shadow">
+              <div class="relative aspect-[4/3] overflow-hidden">
+                <img src="assets/images/chicken_tikka_masala_1783605218967.jpg" alt="Chicken Tikka Masala" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div class="absolute top-4 right-4 bg-cream/90 backdrop-blur-md px-3 py-1.5 rounded-full font-black text-charcoal shadow-md">$16.99</div>
+              </div>
+              <div class="p-6 md:p-8 flex-1 flex flex-col">
+                <h3 class="text-2xl font-black uppercase tracking-tight text-charcoal mb-3">Chicken Tikka Masala</h3>
+                <p class="text-charcoal/70 font-medium mb-6 leading-relaxed flex-1">Tender chicken chunks simmered in a rich, creamy tomato gravy with aromatic spices.</p>
+                <div class="flex items-center gap-2 text-brick font-black uppercase tracking-widest text-sm group-hover:text-walnut transition-colors mt-auto">
+                  View Menu <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div onclick="navigateTo('menu')" class="min-w-[85vw] md:min-w-[350px] snap-start bg-white rounded-[32px] overflow-hidden shadow-lg border border-tan/30 flex flex-col group cursor-pointer hover:shadow-xl transition-shadow">
+              <div class="relative aspect-[4/3] overflow-hidden">
+                <img src="assets/images/garlic_naan_1783605239952.jpg" alt="Garlic Naan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div class="absolute top-4 right-4 bg-cream/90 backdrop-blur-md px-3 py-1.5 rounded-full font-black text-charcoal shadow-md">$4.99</div>
+              </div>
+              <div class="p-6 md:p-8 flex-1 flex flex-col">
+                <h3 class="text-2xl font-black uppercase tracking-tight text-charcoal mb-3">Garlic Naan</h3>
+                <p class="text-charcoal/70 font-medium mb-6 leading-relaxed flex-1">Soft, pillowy Indian bread baked in a tandoor, brushed with butter and fresh garlic.</p>
+                <div class="flex items-center gap-2 text-brick font-black uppercase tracking-widest text-sm group-hover:text-walnut transition-colors mt-auto">
+                  View Menu <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div onclick="navigateTo('menu')" class="min-w-[85vw] md:min-w-[350px] snap-start bg-white rounded-[32px] overflow-hidden shadow-lg border border-tan/30 flex flex-col group cursor-pointer hover:shadow-xl transition-shadow">
+              <div class="relative aspect-[4/3] overflow-hidden">
+                <img src="assets/images/goat_karahi_1783605261293.jpg" alt="Goat Karahi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div class="absolute top-4 right-4 bg-cream/90 backdrop-blur-md px-3 py-1.5 rounded-full font-black text-charcoal shadow-md">$19.99</div>
+              </div>
+              <div class="p-6 md:p-8 flex-1 flex flex-col">
+                <h3 class="text-2xl font-black uppercase tracking-tight text-charcoal mb-3">Goat Karahi</h3>
+                <p class="text-charcoal/70 font-medium mb-6 leading-relaxed flex-1">Succulent pieces of goat slow-cooked in a wok with tomatoes, ginger, and green chilies.</p>
+                <div class="flex items-center gap-2 text-brick font-black uppercase tracking-widest text-sm group-hover:text-walnut transition-colors mt-auto">
+                  View Menu <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Reservation/Location -->
+      <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 md:px-12">
+        <div class="bg-white rounded-[40px] overflow-hidden shadow-2xl border border-tan/30 flex flex-col lg:flex-row">
+          <div class="flex-1 p-10 md:p-16 lg:p-20 flex flex-col justify-center bg-cream/30">
+            <div class="uppercase text-walnut font-black tracking-[0.2em] mb-4 text-sm">Visit Us</div>
+            <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter text-charcoal mb-6 leading-[0.9]">
+              Reserve Your Table
+            </h2>
+            <p class="text-lg text-charcoal/80 font-medium leading-relaxed mb-10">
+              Join us for an unforgettable dining experience. Whether it's an intimate dinner, a family gathering, or a special celebration, we ensure every moment is accompanied by exceptional flavors and warm hospitality.
+            </p>
+            
+            <div class="space-y-8 mb-12">
+              <div class="flex gap-5 items-start">
+                <div class="bg-tan w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm mt-1">
+                  <i data-lucide="map-pin" class="w-7 h-7 text-charcoal"></i>
+                </div>
+                <div class="text-charcoal">
+                  <h3 class="font-bold text-xl leading-tight mb-1">409 S Walnut St</h3>
+                  <p class="opacity-80 text-sm font-medium">Bloomington, IN 47401</p>
+                </div>
+              </div>
+
+              <div class="flex gap-5 items-start">
+                <div class="bg-tan w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm mt-1">
+                  <i data-lucide="clock" class="w-7 h-7 text-charcoal"></i>
+                </div>
+                <div class="text-charcoal">
+                  <h3 class="font-bold text-xl leading-tight mb-1">Opening Hours</h3>
+                  <p class="opacity-80 text-sm font-medium">Daily: 10:00 AM - 10:00 PM</p>
+                </div>
+              </div>
+
+              <div class="flex gap-5 items-start">
+                <div class="bg-tan w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm mt-1">
+                  <i data-lucide="phone" class="w-7 h-7 text-charcoal"></i>
+                </div>
+                <div class="text-charcoal">
+                  <h3 class="font-bold text-xl leading-tight mb-1">+1 317-778-4345</h3>
+                  <p class="opacity-80 text-sm font-medium">Call to make a reservation</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="tel:+13177784345" class="inline-flex items-center justify-center gap-2 bg-charcoal text-cream px-8 py-4 rounded-xl font-black uppercase tracking-wider text-sm hover:bg-walnut transition-colors shadow-lg w-fit">
+              Call Now to Book
+              <i data-lucide="phone" class="w-5 h-5"></i>
+            </a>
+          </div>
+          
+          <div class="flex-1 relative min-h-[400px] lg:min-h-full">
+            <img src="assets/images/premium_reservation_food_1783610466845.jpg" alt="Premium Dining Experience" class="absolute inset-0 w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent flex items-end p-10 md:p-16">
+              <div class="text-cream">
+                <div class="flex items-center gap-2 mb-3">
+                  <div class="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
+                  <span class="text-xs uppercase font-bold tracking-widest text-cream/90">Accepting Reservations</span>
+                </div>
+                <h3 class="text-3xl font-black uppercase tracking-tighter mb-2">Premium Dining</h3>
+                <p class="text-cream/80 font-medium max-w-sm">Experience the finest authentic Indian cuisine in an elegant setting.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Marquee Bar -->
+      <div class="bg-charcoal text-cream h-16 md:h-20 flex items-center overflow-hidden w-full shadow-2xl relative z-10">
+        <div class="flex whitespace-nowrap animate-marquee font-black uppercase text-lg md:text-2xl tracking-tight">
+          <div class="flex items-center">
+            <span class="mx-6">Garlic Naan</span><span class="mx-6 text-gold">•</span>
+            <span class="mx-6">Chicken Korma</span><span class="mx-6 text-gold">•</span>
+            <span class="mx-6">Goat Karahi</span><span class="mx-6 text-gold">•</span>
+            <span class="mx-6">Tandoori Section</span><span class="mx-6 text-gold">•</span>
+            <span class="mx-6">Tikka Masala</span><span class="mx-6 text-gold">•</span>
+            <span class="mx-6">Dine-in & Takeout</span><span class="mx-6 text-gold">•</span>
+          </div>
+          <div class="flex items-center">
+            <span class="mx-6">Garlic Naan</span><span class="mx-6 text-gold">•</span>
+            <span class="mx-6">Chicken Korma</span><span class="mx-6 text-gold">•</span>
+            <span class="mx-6">Goat Karahi</span><span class="mx-6 text-gold">•</span>
+            <span class="mx-6">Tandoori Section</span><span class="mx-6 text-gold">•</span>
+            <span class="mx-6">Tikka Masala</span><span class="mx-6 text-gold">•</span>
+            <span class="mx-6">Dine-in & Takeout</span><span class="mx-6 text-gold">•</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. MENU PAGE SECTION -->
+    <section id="page-menu" class="page transition-all duration-500 ease-in-out py-16 md:py-24 px-6 md:px-12 max-w-7xl mx-auto">
+      <div class="text-center mb-12 md:mb-20">
+        <h2 class="text-4xl md:text-[80px] font-black uppercase tracking-tighter mb-6 text-charcoal leading-none">Menu Highlights</h2>
+        <p class="text-xl text-charcoal/80 max-w-2xl mx-auto font-medium">
+          Discover our most loved dishes, prepared fresh daily using traditional recipes and the finest ingredients.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Item 1 -->
+        <div class="bg-white text-charcoal rounded-[40px] overflow-hidden flex flex-col shadow-xl border border-tan/30">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="assets/images/chicken_tikka_masala_1783605218967.jpg" alt="Chicken Tikka Masala" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-8 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start mb-4 gap-4">
+                <h3 class="text-2xl font-black uppercase tracking-tight leading-tight">Chicken Tikka Masala</h3>
+                <span class="bg-tan text-charcoal px-3 py-1.5 rounded-xl font-black text-sm">$16.99</span>
+              </div>
+              <p class="text-charcoal/70 font-medium mb-8 leading-relaxed">Tender chicken chunks simmered in a rich, creamy tomato gravy with aromatic spices.</p>
+            </div>
+            <a href="tel:+13177784345" class="font-black uppercase tracking-widest text-brick flex items-center gap-2 hover:text-walnut transition-colors w-fit">
+              Order Now <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="bg-white text-charcoal rounded-[40px] overflow-hidden flex flex-col shadow-xl border border-tan/30">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="assets/images/garlic_naan_1783605239952.jpg" alt="Garlic Naan" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-8 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start mb-4 gap-4">
+                <h3 class="text-2xl font-black uppercase tracking-tight leading-tight">Garlic Naan</h3>
+                <span class="bg-tan text-charcoal px-3 py-1.5 rounded-xl font-black text-sm">$4.99</span>
+              </div>
+              <p class="text-charcoal/70 font-medium mb-8 leading-relaxed">Soft, pillowy Indian bread baked in a tandoor, brushed with butter and fresh garlic.</p>
+            </div>
+            <a href="tel:+13177784345" class="font-black uppercase tracking-widest text-brick flex items-center gap-2 hover:text-walnut transition-colors w-fit">
+              Order Now <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="bg-white text-charcoal rounded-[40px] overflow-hidden flex flex-col shadow-xl border border-tan/30">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="assets/images/goat_karahi_1783605261293.jpg" alt="Goat Karahi" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-8 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start mb-4 gap-4">
+                <h3 class="text-2xl font-black uppercase tracking-tight leading-tight">Goat Karahi</h3>
+                <span class="bg-tan text-charcoal px-3 py-1.5 rounded-xl font-black text-sm">$19.99</span>
+              </div>
+              <p class="text-charcoal/70 font-medium mb-8 leading-relaxed">Succulent pieces of goat slow-cooked in a wok with tomatoes, ginger, and green chilies.</p>
+            </div>
+            <a href="tel:+13177784345" class="font-black uppercase tracking-widest text-brick flex items-center gap-2 hover:text-walnut transition-colors w-fit">
+              Order Now <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buffet Info -->
+      <div class="mt-20 bg-charcoal/5 backdrop-blur-md rounded-[40px] p-10 md:p-12 text-center border border-charcoal/10 flex flex-col items-center shadow-sm">
+        <i data-lucide="utensils-crossed" class="w-16 h-16 text-gold mb-6"></i>
+        <h3 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-4 text-charcoal">Daily Lunch Buffet</h3>
+        <p class="text-lg text-charcoal/80 mb-8 max-w-lg font-medium">Experience a wide variety of our best dishes, perfectly priced for a great midday meal.</p>
+        <div class="inline-flex items-center gap-3 bg-white text-charcoal px-6 py-3 rounded-full font-bold uppercase tracking-widest shadow-sm">
+          <span class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></span>
+          $10–20 per person
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ABOUT PAGE SECTION -->
+    <section id="page-about" class="page transition-all duration-500 ease-in-out py-12 md:py-24 px-6 md:px-12 max-w-7xl mx-auto w-full">
+      <div class="text-center mb-16 md:mb-24">
+        <h2 class="text-4xl md:text-[80px] font-black uppercase tracking-tighter mb-6 text-charcoal leading-none">Our Story</h2>
+        <p class="text-xl text-charcoal/80 max-w-3xl mx-auto font-medium leading-relaxed">
+          Rooted in a deep passion for authentic flavors and warm hospitality, 7 Star Indian Cuisine brings the rich culinary traditions of India to the heart of Bloomington.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-24">
+        <div class="order-2 lg:order-1">
+          <h3 class="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-6 text-charcoal">A Local Passion</h3>
+          <p class="text-lg text-charcoal/80 font-medium leading-relaxed mb-6">
+            Founded by local restaurateurs Rajeev and Sunita Sharma, our journey began with a simple vision: to create a space where the Bloomington community could experience the true, uncompromised tastes of Northern India. 
+          </p>
+          <p class="text-lg text-charcoal/80 font-medium leading-relaxed">
+            Drawing inspiration from their family's generations-old recipes, Rajeev and Sunita established 7 Star to celebrate the vibrant spices and complex aromas that define authentic Indian cooking. Whether you're craving a rich Chicken Korma, perfectly baked Garlic Naan from our tandoor, or a comforting Goat Karahi, every dish is crafted with care and tradition.
+          </p>
+        </div>
+        
+        <div class="order-1 lg:order-2 relative">
+          <div class="absolute -inset-4 bg-tan rounded-[40px] mix-blend-multiply opacity-20 -z-10 transform rotate-3"></div>
+          <img src="assets/images/restaurant_interior_1783604741593.jpg" alt="7 Star Indian Cuisine Interior" class="w-full h-auto rounded-[32px] shadow-2xl object-cover aspect-[4/3]" />
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="relative">
+          <div class="absolute -inset-4 bg-gold rounded-[40px] mix-blend-multiply opacity-20 -z-10 transform -rotate-3"></div>
+          <img src="assets/images/indian_cuisine_spread_1783604760843.jpg" alt="Authentic Indian Cuisine Spread" class="w-full h-auto rounded-[32px] shadow-2xl object-cover aspect-[4/3]" />
+        </div>
+
+        <div>
+          <h3 class="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-6 text-charcoal">A Seat at Our Table</h3>
+          <p class="text-lg text-charcoal/80 font-medium leading-relaxed mb-6">
+            Located in the former Bedrak Cafe spot, our warm and inviting dining room has been completely transformed to offer an elegant yet comfortable atmosphere. We believe that great food is best enjoyed with great company, and our space is designed to bring people together.
+          </p>
+          <p class="text-lg text-charcoal/80 font-medium leading-relaxed">
+            From our daily lunch buffets to intimate dinners, we invite you to take a seat at our table and let us share our love for Indian cuisine with you. Welcome to 7 Star Indian Cuisine – where every meal is a celebration.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. GALLERY PAGE SECTION -->
+    <section id="page-gallery" class="page transition-all duration-500 ease-in-out py-12 md:py-24 px-4 md:px-12 max-w-7xl mx-auto w-full">
+      <div class="text-center mb-12 md:mb-20">
+        <h2 class="text-4xl md:text-[80px] font-black uppercase tracking-tighter mb-6 text-charcoal leading-none">Our Gallery</h2>
+        <p class="text-xl text-charcoal/80 max-w-2xl mx-auto font-medium">
+          A visual taste of our authentic dishes, warm atmosphere, and the vibrant culinary culture we bring to Bloomington.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 auto-rows-[250px]">
+        <!-- 1 -->
+        <div class="relative rounded-3xl overflow-hidden shadow-lg group bg-charcoal/5 col-span-1 md:col-span-2 row-span-2">
+          <div class="absolute inset-0 bg-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-center justify-center">
+            <span class="text-cream font-black uppercase tracking-widest text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Authentic Indian Cuisine Spread</span>
+          </div>
+          <img src="assets/images/indian_cuisine_spread_1783604760843.jpg" alt="Authentic Indian Cuisine Spread" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+        <!-- 2 -->
+        <div class="relative rounded-3xl overflow-hidden shadow-lg group bg-charcoal/5 col-span-1 row-span-1">
+          <div class="absolute inset-0 bg-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-center justify-center">
+            <span class="text-cream font-black uppercase tracking-widest text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Sizzling Tandoori Chicken</span>
+          </div>
+          <img src="assets/images/tandoori_chicken_1783606408581.jpg" alt="Sizzling Tandoori Chicken" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+        <!-- 3 -->
+        <div class="relative rounded-3xl overflow-hidden shadow-lg group bg-charcoal/5 col-span-1 row-span-1">
+          <div class="absolute inset-0 bg-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-center justify-center">
+            <span class="text-cream font-black uppercase tracking-widest text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Restaurant Interior</span>
+          </div>
+          <img src="assets/images/restaurant_interior_1783604741593.jpg" alt="Restaurant Interior" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+        <!-- 4 -->
+        <div class="relative rounded-3xl overflow-hidden shadow-lg group bg-charcoal/5 col-span-1 row-span-1">
+          <div class="absolute inset-0 bg-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-center justify-center">
+            <span class="text-cream font-black uppercase tracking-widest text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Chicken Tikka Masala</span>
+          </div>
+          <img src="assets/images/chicken_tikka_masala_1783605218967.jpg" alt="Chicken Tikka Masala" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+        <!-- 5 -->
+        <div class="relative rounded-3xl overflow-hidden shadow-lg group bg-charcoal/5 col-span-1 row-span-2">
+          <div class="absolute inset-0 bg-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-center justify-center">
+            <span class="text-cream font-black uppercase tracking-widest text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Crispy Samosas with Chutney</span>
+          </div>
+          <img src="assets/images/samosa_chutney_1783606384868.jpg" alt="Crispy Samosas with Chutney" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+        <!-- 6 -->
+        <div class="relative rounded-3xl overflow-hidden shadow-lg group bg-charcoal/5 col-span-1 row-span-1">
+          <div class="absolute inset-0 bg-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-center justify-center">
+            <span class="text-cream font-black uppercase tracking-widest text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Fresh Garlic Naan</span>
+          </div>
+          <img src="assets/images/garlic_naan_1783605239952.jpg" alt="Fresh Garlic Naan" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+        <!-- 7 -->
+        <div class="relative rounded-3xl overflow-hidden shadow-lg group bg-charcoal/5 col-span-1 row-span-1">
+          <div class="absolute inset-0 bg-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-center justify-center">
+            <span class="text-cream font-black uppercase tracking-widest text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Paneer Tikka Masala</span>
+          </div>
+          <img src="assets/images/paneer_tikka_1783606423423.jpg" alt="Paneer Tikka Masala" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+        <!-- 8 -->
+        <div class="relative rounded-3xl overflow-hidden shadow-lg group bg-charcoal/5 col-span-1 row-span-1">
+          <div class="absolute inset-0 bg-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-center justify-center">
+            <span class="text-cream font-black uppercase tracking-widest text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Dining Table Setting</span>
+          </div>
+          <img src="assets/images/restaurant_table_1783606443061.jpg" alt="Dining Table Setting" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+        <!-- 9 -->
+        <div class="relative rounded-3xl overflow-hidden shadow-lg group bg-charcoal/5 col-span-1 md:col-span-2 row-span-2">
+          <div class="absolute inset-0 bg-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-center justify-center">
+            <span class="text-cream font-black uppercase tracking-widest text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Traditional Goat Karahi</span>
+          </div>
+          <img src="assets/images/goat_karahi_1783605261293.jpg" alt="Traditional Goat Karahi" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CONTACT PAGE SECTION -->
+    <section id="page-contact" class="page transition-all duration-500 ease-in-out py-12 md:py-24 px-4 md:px-12 max-w-7xl mx-auto w-full">
+      <div class="bg-charcoal text-cream rounded-[40px] p-8 md:p-20 shadow-2xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-[200px] h-[200px] md:w-[300px] md:h-[300px] bg-brick rounded-full mix-blend-soft-light opacity-30 -mr-10 -mt-10 md:-mr-20 md:-mt-20"></div>
+
+        <div class="grid lg:grid-cols-2 gap-12 md:gap-16 relative z-10">
+          <div>
+            <h2 class="text-4xl md:text-[80px] font-black uppercase tracking-tighter mb-8 md:mb-12 leading-none">Get in Touch</h2>
+            <p class="text-xl font-medium text-cream/80 mb-12 max-w-md">
+              We'd love to hear from you. Give us a call for orders or follow us on social media for the latest updates and specials.
+            </p>
+            
+            <div class="space-y-10">
+              <div class="flex items-start gap-6">
+                <div class="w-16 h-16 bg-gold text-charcoal rounded-3xl flex items-center justify-center shrink-0 shadow-lg">
+                  <i data-lucide="phone" class="w-8 h-8"></i>
+                </div>
+                <div>
+                  <h3 class="font-black uppercase tracking-widest text-xl mb-2 text-gold">Orders & Reservations</h3>
+                  <a href="tel:+13177784345" class="text-3xl font-black text-cream hover:text-tan transition-colors block mb-4">
+                    (317) 778-4345
+                  </a>
+                  <a href="tel:+13177784345" class="inline-flex items-center gap-2 bg-gold text-charcoal px-6 py-2.5 rounded-full font-black uppercase tracking-widest text-sm hover:bg-cream hover:scale-105 transition-all shadow-lg">
+                    Book Online <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-6">
+                <div class="w-16 h-16 bg-brick text-cream rounded-3xl flex items-center justify-center shrink-0 shadow-lg">
+                  <i data-lucide="map-pin" class="w-8 h-8"></i>
+                </div>
+                <div>
+                  <h3 class="font-black uppercase tracking-widest text-xl mb-2 text-brick">Location</h3>
+                  <p class="font-medium text-lg text-cream/80">409 S Walnut St<br />Bloomington, IN 47401</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-6">
+                <div class="w-16 h-16 bg-walnut text-cream rounded-3xl flex items-center justify-center shrink-0 shadow-lg">
+                  <i data-lucide="clock" class="w-8 h-8"></i>
+                </div>
+                <div>
+                  <h3 class="font-black uppercase tracking-widest text-xl mb-2 text-walnut">Hours</h3>
+                  <p class="font-medium text-lg text-cream/80">Opens at 10:00 AM daily</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col justify-center items-center bg-cream/5 rounded-[32px] p-12 border border-cream/10 text-center">
+            <h3 class="text-3xl font-black uppercase tracking-tighter mb-8">Follow Us</h3>
+            <div class="flex gap-6">
+              <a href="https://facebook.com" target="_blank" rel="noreferrer" class="w-20 h-20 bg-cream shadow-xl rounded-full flex items-center justify-center text-charcoal hover:text-cream hover:bg-brick hover:scale-110 transition-all duration-300 group">
+                <i data-lucide="facebook" class="w-10 h-10 group-hover:scale-110 transition-transform"></i>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" class="w-20 h-20 bg-cream shadow-xl rounded-full flex items-center justify-center text-charcoal hover:text-cream hover:bg-brick hover:scale-110 transition-all duration-300 group">
+                <i data-lucide="instagram" class="w-10 h-10 group-hover:scale-110 transition-transform"></i>
+              </a>
+            </div>
+            <p class="mt-8 font-medium text-cream/80">
+              Join our community for delicious updates and behind-the-scenes looks at our kitchen.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-charcoal text-cream/70 py-10 md:py-12 text-center text-sm font-medium relative z-10 mt-12 md:mt-20 w-full">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <p>&copy; <span id="year">2026</span> 7 Star Indian Cuisine.</p>
+      <div class="flex items-center gap-3">
+        <svg viewBox="0 0 100 100" class="w-10 h-10 grayscale opacity-70" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="50" fill="#E8DCC0" />
+          <polygon points="50,10 62,35 88,35 67,52 75,78 50,62 25,78 33,52 12,35 38,35" fill="#1B1B1B" />
+          <text x="50" y="47" fontFamily="serif" fontSize="34" fontWeight="900" fill="#E8DCC0" textAnchor="middle" fontStyle="italic">7</text>
+          <text x="50" y="73" fontFamily="serif" fontSize="14" fontWeight="bold" fill="#1B1B1B" textAnchor="middle">Indian</text>
+          <text x="50" y="89" fontFamily="serif" fontSize="14" fontWeight="bold" fill="#1B1B1B" textAnchor="middle">Cuisine</text>
+        </svg>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Single Page Application Router Logic -->
+  <script>
+    let currentPage = 'home';
+
+    function navigateTo(pageId) {
+      if (pageId === currentPage) return;
+
+      // Close mobile drawer if open
+      document.getElementById('mobile-menu').classList.add('hidden');
+      const menuIcon = document.getElementById('menu-icon');
+      menuIcon.setAttribute('data-lucide', 'menu');
+      lucide.createIcons();
+
+      // Switch pages
+      const prevPage = document.getElementById(`page-${currentPage}`);
+      if (prevPage) prevPage.classList.remove('active');
+
+      currentPage = pageId;
+
+      const newPage = document.getElementById(`page-${pageId}`);
+      if (newPage) {
+        newPage.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // Update active state in Navigation links
+      document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.getAttribute('data-target') === pageId) {
+          link.className = "nav-link transition-opacity block py-2 md:py-0 text-lg md:text-sm active-link opacity-100 border-b-2 border-charcoal md:pb-1";
+        } else {
+          link.className = "nav-link transition-opacity block py-2 md:py-0 text-lg md:text-sm opacity-70 hover:opacity-100";
+        }
+      });
+    }
+
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const isOpen = !mobileMenu.classList.contains('hidden');
+
+      if (isOpen) {
+        mobileMenu.classList.add('hidden');
+        menuIcon.setAttribute('data-lucide', 'menu');
+      } else {
+        mobileMenu.classList.remove('hidden');
+        menuIcon.setAttribute('data-lucide', 'x');
+      }
+      lucide.createIcons();
+    }
+
+    function scrollCarousel(direction) {
+      const carousel = document.getElementById('featured-carousel');
+      const amount = direction === 'left' ? -350 : 350;
+      carousel.scrollBy({ left: amount, behavior: 'smooth' });
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.addEventListener("DOMContentLoaded", function() {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
